@@ -1,0 +1,23 @@
+<div class="jumbotron vertical-center">
+    <div class="container padding">
+        <img src="images/krashr-logo-mini.png" class="img-responsive center-block" alt="Krashᴚ logo" />
+        <div class="alert alert-danger" ng-hide="web">
+            You have to be <a href="#/signin" alt="Sign in" class="alert-link">signed in</a> to search for vulnerabilities.
+        </div>
+        <div class="alert alert-danger" ng-hide="problem">
+            There is a problem, try the search later.
+        </div>
+        <div class="alert alert-warning" ng-hide="wrong">
+            The URL is not right.
+        </div>
+        <form class="form-vulsearch" role="form">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter an URL to search for vulnerabilities..." ng-model="websearch" required autofocus>
+                <span class="input-group-addon" data-toggle="tooltip" title="Example: http://www.foo.com">?</span>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" ng-click="search()">Search!</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

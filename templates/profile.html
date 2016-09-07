@@ -1,0 +1,70 @@
+<div class="navbar navbar-default center">
+    <ul class="nav nav-tabs centered">
+        <li class="active"><a href="#/profile">My profile</a></li>
+        <li><a href="#/updatepassword">Update password</a></li>
+        <li><a href="#/allsearches">My searches</a></li>
+        <li><a href="#/nowsearching">Now searching...</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <h1>My profile</h1>
+    <div class="alert alert-danger" ng-hide="pass">
+        The password doesn't match.
+    </div>
+    <div class="alert alert-danger" ng-hide="impossible">
+        Impossible to update the profile.
+    </div>
+    <div class="alert alert-danger" ng-hide="r_impossible">
+        Impossible to retrieve your user profile.
+    </div>
+    <div class="alert alert-success" ng-hide="successful">
+        Profile updated successfully.
+    </div>
+    <div class="alert alert-warning" ng-hide="in_data">
+            All the required data is not inserted.
+        </div>
+    <form id="signupform" class="form-horizontal" role="form" ng-submit="updateProfile()">
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="text" class="form-control" id="user" name="user" placeholder="Username" ng-model="user" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email address" ng-model="email" disabled>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" ng-model="firstname" pattern=".{2,}" required autofocus>
+                    <span class="input-group-addon" data-toggle="tooltip" title="2 characters min.">?</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" ng-model="lastname" pattern=".{2,}" required>
+                    <span class="input-group-addon" data-toggle="tooltip" title="2 characters min.">?</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password to update your profile" ng-model="password" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-12">
+                <button id="btn-update" type="submit" class="btn btn-info" ng-click="updateProfile()">Update profile</button>
+                <button id="btn-signout" type="button" class="btn btn-warning" ng-click="signOut()">Sign out</button>
+                <button id="btn-delete-account" type="button" class="btn btn-danger" ng-click="removeUser()">Delete account</button>
+            </div>
+        </div>
+    </form>
+</div>

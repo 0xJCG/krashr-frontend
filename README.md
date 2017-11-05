@@ -1,4 +1,4 @@
-# Krashr API
+# Krashr front-end
 
 A new repository to improve the Krashr front-end. If you want to check the original project, you can go to: https://github.com/0xJCG/tfg-krashr.
 

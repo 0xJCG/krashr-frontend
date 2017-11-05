@@ -13,12 +13,12 @@
         <div class="panel-heading">
           <h3 class="panel-title">Information about the search</h3>
         </div>
-        <div class="panel-body">
-          <div class="panel panel-primary">
+        <div class="panel-body" v-for="search in s">
+          <div class="panel panel-primary" v-for="data in search">
             <div class="panel-body">
-              <p>URL: <a href=""></a>.</p>
-              <p>Date:.</p>
-              <p>Vulnerability:.</p>
+              <p>URL: {{ data.web }}.</p>
+              <p>Date: {{ new Date(data.date).toLocaleString() }}.</p>
+              <p>Vulnerability: {{ data.vulnerability }}.</p>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default {
       if (n) this.totalItems = n.length
     })
     this.getSearchResults().then(s => {
-      if (s && s.length > 0) {
+      if (s) {
         this.s = s
         this.searching = false
         this.searches = true

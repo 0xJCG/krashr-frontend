@@ -1,0 +1,50 @@
+<template>
+  <div id="privacy-policy">
+    <div id="sample_html" class="container">
+        <h1>Privacy Policy</h1>
+        <p class="c1"><span>Our service allows any registered developers to search for web vulnerabilities on the webpages they enter.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>This Privacy Policy describes how and when Krashr collects and uses your information when you use our service. When using our service you consent to the collection, transfer, storage, disclosure, and use of your information as described in this Privacy Policy.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>Your information is controlled by Krashr [redacted]. Despite this, you alone control and are responsible for the searches you submit through the service.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>Irrespective of which country you live in, you authorize us to use your information in, and as a result to transfer it to and store it in, Spain, and any other country where we operate. Privacy and data protection laws in some of these countries may vary from the laws in the country where you live.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>If you have any questions or comments about this Privacy Policy, please contact us at [redacted].</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span class="c3">Information Collection and Use</span></p>
+        <p class="c0"><span></span></p>
+        <ol start="1" class="c2"><li class="c1 c4"><span><b>Basic Account Information</b>. When you create or reconfigure an account, you provide some personal information, such as your username, password or email address. Neither of your information is listed publicly.</span></li></ol>
+        <p class="c0"><span></span></p>
+        <ol start="2" class="c2"><li class="c1 c4"><span><b>Contact Information</b>. We may use your contact information to send you information about our service, to market to you and to to help prevent spam, fraud, or abuse.</span></li></ol>
+        <p class="c0"><span></span></p>
+        <ol start="3" class="c2"><li class="c1 c4"><span><b>Log data</b>. When you use our service, we may receive information such as your IP address, browser type, operating system, and cookie information. We receive this data when you interact with our service. Krashr uses this log data to provide, understand, and improve our service.</span></li></ol>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span class="c3">Information Sharing and Disclosure</span></p>
+        <p class="c0"><span></span></p>
+        <ol start="1" class="c2"><li class="c1 c4"><span><b>Law and Harm</b>: notwithstanding anything to the contrary in this Policy, we may preserve or disclose your information if we believe that it is reasonably necessary to comply with a law, regulation, legal process, or governmental request; to protect the safety of any person; to address fraud, security or technical issues; or to protect Krashr’s rights or property. However, nothing in this Privacy Policy is intended to limit any legal defenses or objections that you may have to a third party’s, including a government’s, request to disclose your information.</span></li></ol>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span class="c3">Accessing and Modifying Your Personal Information</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>If you are a registered user of our service, we provide you with tools and account settings to access, correct, delete, or modify the personal information you provided to us and associated with your account.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>You can also permanently delete your Krashr account. All your information data and searches will be deleted, but not your Log Data.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span class="c3">Changes to this Policy</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>We may revise this Privacy Policy from time to time. The most current version of the policy will govern our use of your information and will always be <router-link to="privacy-policy" alt="Krashr's Privacy Policy">here</router-link>. If we make a change to this policy that, in our sole discretion, is material, we will notify you via email to the email address associated with your account. By continuing to access or use the service after those changes become effective, you agree to be bound by the revised Privacy Policy.</span></p>
+        <p class="c0"><span></span></p>
+        <p class="c1"><span>Effective: February 3, 2016.</span></p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'privacyPolicy'
+}
+</script>
+
+<style scoped>
+ol{margin:0;padding:0} #sample_html .c5{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt} #sample_html .c2{list-style-type:decimal;margin:0;padding:0} #sample_html .c4{padding-left:0pt;margin-left:36pt} #sample_html .c3{font-size:12pt;font-weight:bold} #sample_html .c0{height:11pt;direction:ltr} #sample_html .c1{direction:ltr} #sample_html .title{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:36pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt} #sample_html .subtitle{padding-top:18pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:24pt;font-family:"Georgia";padding-bottom:4pt} #sample_html li{color:#000000;font-size:11pt;font-family:"Arial"} #sample_html p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"} #sample_html h1{padding-top:24pt;line-height:1.15;text-align:left;color:#000000;font-size:18pt;font-family:"Arial";font-weight:bold;padding-bottom:6pt} #sample_html h2{padding-top:18pt;line-height:1.15;text-align:left;color:#000000;font-size:14pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt} #sample_html h3{padding-top:14pt;line-height:1.15;text-align:left;color:#666666;font-size:12pt;font-family:"Arial";font-weight:bold;padding-bottom:4pt} #sample_html h4{padding-top:12pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Arial";padding-bottom:2pt} #sample_html h5{padding-top:11pt;line-height:1.15;text-align:left;color:#666666;font-size:10pt;font-family:"Arial";font-weight:bold;padding-bottom:2pt} #sample_html h6{padding-top:10pt;line-height:1.15;text-align:left;color:#666666;font-style:italic;font-size:10pt;font-family:"Arial";padding-bottom:2pt}
+</style>

@@ -1,0 +1,8 @@
+{
+  "extends": "vue",
+  "globals": {
+    "$": true,
+    "jQuery": true,
+    "localStorage": true
+  } 
+}

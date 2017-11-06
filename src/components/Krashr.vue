@@ -1,7 +1,7 @@
 <template>
   <div id="krashr">
-    <top-nav></top-nav>
-    <router-view v-on:languageChanged="updateLanguage"></router-view>
+    <top-nav v-bind:loggedIn="loggedIn"></top-nav>
+    <router-view v-on:isLoggedIn="isLoggedIn"></router-view>
   </div>
 </template>
 
@@ -11,9 +11,14 @@ import TopNav from '@/components/TopNav'
 export default {
   name: 'krashr',
   components: { TopNav },
+  data: function () {
+    return {
+      loggedIn: false
+    }
+  },
   methods: {
-    updateLanguage: function (l) {
-      this.$emit('languageChanged', l)
+    isLoggedIn: function (l) {
+      this.loggedIn = l
     }
   }
 }

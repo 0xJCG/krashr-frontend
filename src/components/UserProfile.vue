@@ -77,6 +77,7 @@ export default {
   methods: {
     close: function () {
       this.signOut()
+      this.$emit('isLoggedIn', false)
     }
   }
 }

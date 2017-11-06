@@ -14,6 +14,7 @@
           <h3 class="panel-title">Information about the search</h3>
         </div>
         <div class="panel-body" v-for="search in s">
+          <p>-----</p>
           <div class="panel panel-primary" v-for="data in search">
             <div class="panel-body">
               <p>URL: {{ data.web }}.</p>

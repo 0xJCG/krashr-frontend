@@ -45,7 +45,7 @@ export default {
   mixins: [SearchFunctions],
   mounted: function () {
     this.getCurrentSearchResult().then(s => {
-      if (s) {
+      if (s && s.response !== false) {
         this.s = s
         this.searching = false
         this.search = true

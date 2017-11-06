@@ -25,49 +25,32 @@
                 <span v-translate class="navtab-text">Home</span>
               </router-link>
             </li>
-            <li v-if="!user" class="navtab-button">
+            <li v-if="!loggedIn" class="navtab-button">
               <router-link to='/sign-in'>
-                <i class="fa fa-search navtab-icon" aria-hidden="true"></i>
+                <i class="fa fa-user-o navtab-icon" aria-hidden="true"></i>
                 <span v-translate class="navtab-text">Sign in</span>
               </router-link>
             </li>
-            <li v-if="user" class="navtab-button">
+            <li v-if="loggedIn" class="navtab-button">
               <router-link to='/all-searches'>
                 <i class="fa fa-search navtab-icon" aria-hidden="true"></i>
                 <span v-translate class="navtab-text">All searches</span>
               </router-link>
             </li>
-            <li v-if="user" class="navtab-button">
+            <li v-if="loggedIn" class="navtab-button">
               <router-link to='/searching'>
                 <i class="fa fa-search navtab-icon" aria-hidden="true"></i>
                 <span v-translate class="navtab-text">Searching</span>
               </router-link>
             </li>
-          </ul>
-
-          <ul v-if="user" class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-user-o" aria-hidden="true"></i>
-                {{ user }} <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <router-link to='/user-profile'>
-                    <i class="fa fa-cog" aria-hidden="true"></i>
-                    <span v-translate>Perfil</span>
-                  </router-link>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li @click="logout">
-                  <router-link to=''>
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>
-                    <span v-translate>Cerrar sesión</span>
-                  </router-link>
-                </li>
-              </ul>
+            <li v-if="loggedIn" class="navtab-button">
+              <router-link to='/user-profile'>
+                <i class="fa fa-user-o navtab-icon" aria-hidden="true"></i>
+                <span v-translate class="navtab-text">Profile</span>
+              </router-link>
             </li>
           </ul>
+
         </div> <!-- /.navbar-collapse -->
 
       </div><!-- /.container-fluid -->
@@ -82,15 +65,18 @@ import UserFunctions from '@/mixins/UserFunctions.js'
 
 export default {
   name: 'topNav',
-  mixins: [UserFunctions],
-  computed: {
-    user: function () {
-      return localStorage.getItem('user')
+  data: function () {
+    return {
+      user: null
     }
   },
+  props: ['loggedIn'],
+  mixins: [UserFunctions],
   watch: {
-    user: function (newVal) {
-      console.log(newVal)
+    loggedIn: function (logged) {
+      if (logged) this.user = localStorage.getItem('user')
+      else this.user = null
+      this.$router.push('/')
     }
   },
   methods: {

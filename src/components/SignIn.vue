@@ -148,7 +148,7 @@ export default {
           if (response && response !== [] && response.success) {
             localStorage.setItem('token', response.token)
             localStorage.setItem('user', this.user)
-            this.$router.push('/')
+            this.$emit('isLoggedIn', true)
           } else this.inImpossible = true
         })
       }
@@ -184,10 +184,13 @@ export default {
           'email': this.email
         }
         this.signUp(data).then(response => {
-          if (response) {
-            localStorage.setItem('token', response.token)
-            this.$router.push('/')
-          } else this.inImpossible = true
+          if (response && response.name !== 'MongoError') {
+            this.user = this.username
+            this.pass = this.pass1
+            this.logIn()
+            /* localStorage.setItem('token', response.token)
+            this.$router.push('/') */
+          } else this.upImpossible = true
         })
       }
     },
@@ -196,7 +199,6 @@ export default {
         this.checkEmailPwnage(this.email).then(response => {
           if (response) {
             this.hipbEmail = true
-            $('#email').focus()
           }
         })
       } else {
@@ -205,12 +207,13 @@ export default {
       }
     },
     checkPass: function () {
-      this.checkPasswordPwnage(this.pass1).then(response => {
-        if (response) {
-          this.hipbPass = true
-          $('#pass1').focus()
-        }
-      })
+      if (this.pass1 !== '') {
+        this.checkPasswordPwnage(this.pass1).then(response => {
+          if (response) {
+            this.hipbPass = true
+          }
+        })
+      }
     },
     isEmail: function (email) {
       var regexp = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i

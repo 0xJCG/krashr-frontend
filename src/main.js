@@ -21,10 +21,12 @@ Vue.http.interceptors.push(function (request, next) {
     request.headers.set('x-access-token', localStorage.getItem('token'))
     // request.headers.set('Access-Control-Request-Method', '*')
   }
-  request.headers.set('Accept-Language', 'en')
-  // request.headers.set('Access-Control-Expose-Headers', '*')
-  request.headers.set('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8')
-  request.headers.set('Access-Control-Allow-Origin', '*')
+  if (request.url.split('/')[2] !== 'haveibeenpwned.com') {
+    request.headers.set('Access-Control-Allow-Origin', '*')
+    request.headers.set('Accept-Language', 'en')
+    // request.headers.set('Access-Control-Expose-Headers', '*')
+    request.headers.set('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8')
+  }
   next()
 })
 
